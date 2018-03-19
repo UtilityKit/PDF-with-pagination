@@ -1,0 +1,25 @@
+<apex:page docType="html-5.0" sidebar="false" showheader="false">
+
+<apex:stylesheet value="{!URLFOR($Resource.TouchPDF, 'touchpdf/css/jquery.touchPDF.css')}" />
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/jquery.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/pdf.compatibility.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/jquery.mousewheel.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/jquery.panzoom.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/jquery.touchPDF.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/jquery.touchSwipe.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/pdf.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.TouchPDF, 'touchpdf/js/pdf.worker.js')}"/>
+ 
+<script>
+$(function() {
+      PDFJS.workerSrc ='/resource/PDF/touchpdf-master/pdf.worker.js';
+      $("#myPDF").pdf( {  
+        source: "/apex/sampelPdf",
+        showToolbar: true,
+      } );
+    })
+</script>
+
+<div id="myPDF" style="width:100%; height:100%;"></div>
+</apex:page>
+                                        
